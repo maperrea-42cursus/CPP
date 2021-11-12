@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:24:44 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/11 17:19:43 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/11/12 15:10:14 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include <iostream>
 
 Animal::Animal() : type("unknown creature") {
+	std::cout << "New Animal Created" << std::endl;
+}
+
+Animal::Animal(std::string const & type) : type(type) {
 	std::cout << "New Animal Created" << std::endl;
 }
 

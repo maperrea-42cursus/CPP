@@ -1,41 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 17:23:30 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/12 15:11:58 by maperrea         ###   ########.fr       */
+/*   Created: 2021/11/11 16:22:10 by maperrea          #+#    #+#             */
+/*   Updated: 2021/11/12 16:01:38 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <string>
 
-class WrongAnimal {
+class Animal {
 	public:
 
 		/* Constructors and destructors */
 
-		WrongAnimal();
-		WrongAnimal(std::string const & type);
-		WrongAnimal(const WrongAnimal & copy);
-		~WrongAnimal();
+		Animal();
+		Animal(std::string const & type);
+		Animal(const Animal & copy);
+		virtual ~Animal();
 
 		/* Member functions */
 
-		void makeSound() const;
+		virtual void makeSound() const;
 
 		/* Setters end Getters */
 
 		std::string getType() const;
 
+
 		/* Operator overloads */
 
-		WrongAnimal & operator=(const WrongAnimal & rhs);
+		Animal & operator=(const Animal & rhs);
 
 	protected:
 		

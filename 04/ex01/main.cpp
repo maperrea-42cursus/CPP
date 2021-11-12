@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 16:24:44 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/12 15:09:25 by maperrea         ###   ########.fr       */
+/*   Created: 2021/11/11 17:18:02 by maperrea          #+#    #+#             */
+/*   Updated: 2021/11/12 16:00:41 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
+#include "Dog.hpp"
 #include "Cat.hpp"
 #include <iostream>
 
-Cat::Cat() : Animal("Cat") {
-	std::cout << "It is a cat!" << std::endl;
-}
-
-Cat::Cat(const Cat & copy) : Animal(copy) {
-	std::cout << "It is a cat!" << std::endl;
-}
-
-Cat::~Cat() {
-	std::cout << "It was a cat." << std::endl;
-}
-
-void Cat::makeSound() const {
-	std::cout << "Meow" << std::endl;
-}
-
-Cat & Cat::operator=(const Cat & rhs) {
-	this->Animal::operator=(rhs);
-
-	return *this;
+int main()
+{
+	Animal *zoo[10];
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2)
+			zoo[i] = new Dog();
+		else
+			zoo[i] = new Cat();
+		zoo[i]->makeSound();
+	}
+	for (int i = 0; i < 10; i++)
+		delete zoo[i];
+	Cat cat;
+	Cat clone(cat);
+	if (cat.getBrain() == clone.getBrain())
+		std::cout << "\nShallow copy\n" << std::endl;
+	else
+		std::cout << "\nDeep copy\n" << std::endl;
 }

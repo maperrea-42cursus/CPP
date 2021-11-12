@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:24:45 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/12 15:09:25 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/11/12 15:59:44 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 #include <iostream>
 
 Dog::Dog() : Animal("Dog") {
-	type = "Dog";
+	brain = new Brain();
 	std::cout << "It is a dog!" << std::endl;
 }
 
-Dog::Dog(const Dog & copy) : Animal(copy) {
+Dog::Dog(const Dog & copy) {
+	*this = copy;
 	std::cout << "It is a dog!" << std::endl;
 }
 
 Dog::~Dog() {
+	delete brain;
 	std::cout << "It was a dog." << std::endl;
 }
 
@@ -30,8 +32,16 @@ void Dog::makeSound() const {
 	std::cout << "Woof" << std::endl;
 }
 
+Brain * Dog::getBrain() const {
+	return brain;
+}
+
 Dog & Dog::operator=(const Dog & rhs) {
+	if (this == &rhs)
+		return *this;
 	this->Animal::operator=(rhs);
+	delete this->brain;
+	this->brain = new Brain(*rhs.brain);
 
 	return *this;
 }

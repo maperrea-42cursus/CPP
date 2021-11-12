@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 17:23:30 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/12 15:11:58 by maperrea         ###   ########.fr       */
+/*   Created: 2021/11/11 16:22:11 by maperrea          #+#    #+#             */
+/*   Updated: 2021/11/12 15:59:44 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include <string>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class WrongAnimal {
+class Dog : public Animal {
 	public:
 
 		/* Constructors and destructors */
 
-		WrongAnimal();
-		WrongAnimal(std::string const & type);
-		WrongAnimal(const WrongAnimal & copy);
-		~WrongAnimal();
+		Dog();
+		Dog(const Dog & copy);
+		~Dog();
 
 		/* Member functions */
 
@@ -31,17 +31,17 @@ class WrongAnimal {
 
 		/* Setters end Getters */
 
-		std::string getType() const;
+		Brain * getBrain() const;
 
 		/* Operator overloads */
 
-		WrongAnimal & operator=(const WrongAnimal & rhs);
+		Dog & operator=(const Dog & rhs);
 
-	protected:
+	private:
 		
 		/* Member variables */
 
-		std::string type;
+		Brain *brain;
 
 };
 
