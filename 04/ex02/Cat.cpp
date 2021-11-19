@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:24:44 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/12 15:59:44 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/11/18 12:40:15 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Cat & Cat::operator=(const Cat & rhs) {
 		return *this;
 	this->Animal::operator=(rhs);
 	delete this->brain;
-	this->brain= new Brain(*rhs.brain);
+	this->brain = new Brain(*rhs.brain);
 
 	return *this;
 }
