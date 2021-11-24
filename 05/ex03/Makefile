@@ -16,7 +16,7 @@ INCDIR			= ./
 
 SRCDIR			= ./
 
-SRCS			= ./Bureaucrat.cpp ./Form.cpp ./main.cpp ./PresidentialPardonForm.cpp ./RobotomyRequestForm.cpp ./ShrubberyCreationForm.cpp
+SRCS			= ./Bureaucrat.cpp ./Form.cpp ./Intern.cpp ./main.cpp ./PresidentialPardonForm.cpp ./RobotomyRequestForm.cpp ./ShrubberyCreationForm.cpp
 
 OBJDIR			= obj
 
