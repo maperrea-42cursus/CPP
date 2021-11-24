@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:13:00 by maperrea          #+#    #+#             */
-/*   Updated: 2021/10/28 14:06:23 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/11/24 14:04:03 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,19 +37,19 @@ void Phonebook::add()
 	std::string input;
 
 	std::cout << "First name: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	new_contact.set_first_name(input);
 	std::cout << "Last name: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	new_contact.set_last_name(input);
 	std::cout << "Nickname: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	new_contact.set_nickname(input);
 	std::cout << "Phone number: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	new_contact.set_phone_number(input);
 	std::cout << "Darkest secret: ";
-	std::cin >> input;
+	std::getline(std::cin, input);
 	new_contact.set_secret(input);
 	add(new_contact);
 }
@@ -67,6 +67,7 @@ std::string Phonebook::get_10(std::string str)
 void Phonebook::search()
 {
 	int index = 0;
+	std::string input;
 
 	if (!total_contacts)
 	{
@@ -83,14 +84,13 @@ void Phonebook::search()
 	}
 
 	std::cout << "Please the id of the contact you wish to see: ";
-	while (index < 1 || index > total_contacts)
+	std::getline(std::cin, input);
+	index = std::atoi(input.c_str());
+	while (input.find_first_not_of("0123456789") != std::string::npos || index < 1 || index > total_contacts)
 	{
-		if (!(std::cin >> index))
-		{
 			std::cout << "Please enter a valid id [1-" << total_contacts << "] : ";
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		}
+			std::getline(std::cin, input);
+			index = std::atoi(input.c_str());
 	}
 	contacts[index - 1].show();
 }
@@ -103,7 +103,8 @@ void	Phonebook::interface()
 	while (1)
 	{
 		std::cout << "Please enter one of the following commands: [ ADD | SEARCH | EXIT ]\n> ";
-		std::cin >> input;
+		std::getline(std::cin, input);
+		std::cout << "|" << input << "|" << std::endl;
 		if (!input.compare("ADD"))
 			add();
 		else if (!input.compare("SEARCH"))
