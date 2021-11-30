@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 16:38:13 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/25 18:25:54 by maperrea         ###   ########.fr       */
+/*   Created: 2021/11/30 17:58:47 by maperrea          #+#    #+#             */
+/*   Updated: 2021/11/30 18:18:16 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#ifndef ITER_HPP
+# define ITER_HPP
 
-int main()
-{
-	std::string str = "HI THIS IS BRAIN";
-	std::string *stringPTR = &str;
-	std::string &stringREF = str;
-	std::cout << &str << "\n"
-		<< stringPTR << "\n"
-		<< &stringREF << "\n"
-		<< str << "\n"
-		<< *stringPTR << "\n"
-		<< stringREF << std::endl;
+template<typename T>
+void iter(T * arr, size_t n, void (*f)(T & elem)) {
+	for (size_t i = 0; i < n; i++)
+		f(arr[i]);
 }
+
+#endif

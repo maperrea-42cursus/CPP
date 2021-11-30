@@ -5,23 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 17:50:02 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/28 15:15:59 by maperrea         ###   ########.fr       */
+/*   Created: 2021/11/30 17:58:51 by maperrea          #+#    #+#             */
+/*   Updated: 2021/11/30 18:18:28 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include "Point.hpp"
 #include <iostream>
+#include "iter.hpp"
 
-bool bsp(Point const a, Point const b, Point const c, Point const point);
+template<typename T>
+void print(T & elem) {
+	std::cout << elem << std::endl;
+}
 
-int main( void ) {
-	Point a = Point(Fixed(0), Fixed(0));
-	Point b = Point(Fixed(1), Fixed(0));
-	Point c = Point(Fixed(0), Fixed(1));
+int main() {
+	int a[5] = {0, 1, 2, 3, 4};
+	std::string s[3] = {"abc", "def", "ghi"};
 
-	std::cout << bsp(a, b, c, Point(Fixed(0.3f), Fixed(0.3f))) << std::endl;
-	std::cout << bsp(a, b, c, Point(Fixed(0.5f), Fixed(0.5f))) << std::endl;
-	std::cout << bsp(a, b, c, Point(Fixed(1), Fixed(1))) << std::endl;
+	iter<int>(a, 5, &(print<int>));
+	iter<std::string>(s, 3, &(print<std::string>));
 }

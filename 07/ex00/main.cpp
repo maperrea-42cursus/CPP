@@ -5,23 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 17:50:02 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/28 15:15:59 by maperrea         ###   ########.fr       */
+/*   Created: 2021/11/30 17:51:31 by maperrea          #+#    #+#             */
+/*   Updated: 2021/11/30 17:57:56 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
-#include "Point.hpp"
 #include <iostream>
-
-bool bsp(Point const a, Point const b, Point const c, Point const point);
+#include "swap.hpp"
+#include "min.hpp"
+#include "max.hpp"
 
 int main( void ) {
-	Point a = Point(Fixed(0), Fixed(0));
-	Point b = Point(Fixed(1), Fixed(0));
-	Point c = Point(Fixed(0), Fixed(1));
+	int a = 2;
+	int b = 3;
 
-	std::cout << bsp(a, b, c, Point(Fixed(0.3f), Fixed(0.3f))) << std::endl;
-	std::cout << bsp(a, b, c, Point(Fixed(0.5f), Fixed(0.5f))) << std::endl;
-	std::cout << bsp(a, b, c, Point(Fixed(1), Fixed(1))) << std::endl;
+	swap( a, b );
+
+	std::cout << "a = " << a << ", b = " << b << std::endl;
+	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+
+	std::string c = "chaine1";
+	std::string d = "chaine2";
+
+	swap(c, d);
+
+	std::cout << "c = " << c << ", d = " << d << std::endl;
+	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 19:13:00 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/24 14:04:03 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/11/25 16:42:08 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,6 @@ void	Phonebook::interface()
 	{
 		std::cout << "Please enter one of the following commands: [ ADD | SEARCH | EXIT ]\n> ";
 		std::getline(std::cin, input);
-		std::cout << "|" << input << "|" << std::endl;
 		if (!input.compare("ADD"))
 			add();
 		else if (!input.compare("SEARCH"))

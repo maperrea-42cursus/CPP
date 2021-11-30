@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 16:38:13 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/25 18:25:54 by maperrea         ###   ########.fr       */
+/*   Created: 2021/11/26 17:16:40 by maperrea          #+#    #+#             */
+/*   Updated: 2021/11/26 17:21:15 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#include <cstdint>
 #include <iostream>
 
-int main()
-{
-	std::string str = "HI THIS IS BRAIN";
-	std::string *stringPTR = &str;
-	std::string &stringREF = str;
-	std::cout << &str << "\n"
-		<< stringPTR << "\n"
-		<< &stringREF << "\n"
-		<< str << "\n"
-		<< *stringPTR << "\n"
-		<< stringREF << std::endl;
+typedef struct s_data {
+	int a;
+	int b;
+	int c;
+}				Data;
+
+uintptr_t serialize(Data * d) {
+	return (reinterpret_cast<uintptr_t>(d));
 }
+
+Data * deserialize(uintptr_t i) {
+	return (reinterpret_cast<Data *>(i));
+}
+
+int main() {
+	Data * d = new Data;
+	Data * e = deserialize(serialize(d));
+	if (d == e)
+		std::cout << "Success!" << std::endl;
+	else
+		std::cout << "Failure!" << std::endl;
+}
+

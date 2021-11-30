@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   max.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 16:38:13 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/25 18:25:54 by maperrea         ###   ########.fr       */
+/*   Created: 2021/11/30 17:57:12 by maperrea          #+#    #+#             */
+/*   Updated: 2021/11/30 17:57:34 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#ifndef MAX_HPP
+# define MAX_HPP
 
-int main()
+template<typename T>
+T & max(T & a, T & b)
 {
-	std::string str = "HI THIS IS BRAIN";
-	std::string *stringPTR = &str;
-	std::string &stringREF = str;
-	std::cout << &str << "\n"
-		<< stringPTR << "\n"
-		<< &stringREF << "\n"
-		<< str << "\n"
-		<< *stringPTR << "\n"
-		<< stringREF << std::endl;
+	if (a > b)
+		return a;
+	return b;
 }
+
+#endif

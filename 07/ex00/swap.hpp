@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   swap.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/28 16:38:13 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/25 18:25:54 by maperrea         ###   ########.fr       */
+/*   Created: 2021/11/30 17:51:25 by maperrea          #+#    #+#             */
+/*   Updated: 2021/11/30 17:54:57 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#ifndef SWAP_HPP
+# define SWAP_HPP
 
-int main()
+template<typename T>
+void swap(T & a, T & b)
 {
-	std::string str = "HI THIS IS BRAIN";
-	std::string *stringPTR = &str;
-	std::string &stringREF = str;
-	std::cout << &str << "\n"
-		<< stringPTR << "\n"
-		<< &stringREF << "\n"
-		<< str << "\n"
-		<< *stringPTR << "\n"
-		<< stringREF << std::endl;
+	T tmp = a;
+	a = b;
+	b = tmp;
 }
+
+#endif
