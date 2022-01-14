@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 15:21:46 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/11 15:42:19 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:03:17 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ void DiamondTrap::attack(const std::string & target) {
 
 void DiamondTrap::attack(ClapTrap & target) {
 	this->ScavTrap::attack(target);
+}
+
+void DiamondTrap::whoAmI() const {
+	std::cout << "DiamondTrap " << this->name << "'s claptrap name is " << this->ClapTrap::name << std::endl;
 }
 
 DiamondTrap & DiamondTrap::operator=(const DiamondTrap & rhs) {

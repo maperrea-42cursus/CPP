@@ -18,6 +18,8 @@ MateriaSource::~MateriaSource() {
 
 void MateriaSource::learnMateria(AMateria * m) {
 	int i = 0;
+	if (!m)
+		return ;
 	while (i < 4 && knownMateria[i])
 		i++;
 	if (i != 4)

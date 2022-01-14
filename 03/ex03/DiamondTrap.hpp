@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 14:59:56 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/11 15:48:25 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:07:48 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 
 		void attack(const std::string & target);
 		void attack(ClapTrap & target);
+		void whoAmI() const;
 
 		/* Setters end Getters */
 

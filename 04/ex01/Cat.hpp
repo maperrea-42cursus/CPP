@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:22:10 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/12 15:59:44 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:08:42 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat : public Animal {
 
 		Cat();
 		Cat(const Cat & copy);
-		~Cat();
+		virtual ~Cat();
 
 		/* Member functions */
 

@@ -33,11 +33,13 @@ void Character::equip(AMateria * m) {
 }
 
 void Character::unequip(int idx) {
+	if (idx < 0 || idx >= 4)
+		return ;
 	inventory[idx] = NULL;
 }
 
 void Character::use(int i, ICharacter& target) {
-	if (!inventory[i])
+	if (i < 0 || i >= 4 || !inventory[i])
 		return;
 	inventory[i]->use(target);
 }

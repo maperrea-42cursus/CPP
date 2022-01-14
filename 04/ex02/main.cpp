@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:18:02 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/12 18:04:08 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:13:20 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int main()
 		std::cout << "\nShallow copy\n" << std::endl;
 	else
 		std::cout << "\nDeep copy\n" << std::endl;
-	Animal test_subject;
+//	Animal test_subject; //does not compile
 }

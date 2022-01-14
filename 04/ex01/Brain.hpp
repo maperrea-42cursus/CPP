@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 14:29:32 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/12 14:47:04 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/12/08 11:10:10 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BRAIN_HPP
 
 #include <string>
+#include <iostream>
 
 class Brain {
 	public:

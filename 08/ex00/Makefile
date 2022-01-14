@@ -6,17 +6,17 @@
 #    By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 14:25:26 by maperrea          #+#    #+#              #
-#    Updated: 2021/12/09 17:20:24 by maperrea         ###   ########.fr        #
+#    Updated: 2022/01/14 17:39:13 by maperrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= administration
+NAME			= easyfind
 
 INCDIR			= ./
 
 SRCDIR			= ./
 
-SRCS			= ./Bureaucrat.cpp ./Form.cpp ./main.cpp ./PresidentialPardonForm.cpp ./RobotomyRequestForm.cpp ./ShrubberyCreationForm.cpp
+SRCS			= main.cpp \
 
 OBJDIR			= obj
 

@@ -6,7 +6,7 @@
 #    By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/27 14:25:26 by maperrea          #+#    #+#              #
-#    Updated: 2021/11/11 15:49:31 by maperrea         ###   ########.fr        #
+#    Updated: 2021/12/01 16:06:31 by maperrea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,9 @@ OBJDIR			= obj
 
 OBJ				= $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 
-CC				= clang++ -g -fsanitize=address
+CC				= clang++
 
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror -Wshadow -Wno-shadow
 
 RM				= rm -f
 

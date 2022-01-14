@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 19:02:54 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/30 16:07:19 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:03:17 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int main() {
 	std::cout << "Roland3's _clap_name is now "
 		<< roland3.ClapTrap::get_name() << std::endl;
 	std::cout << "Roland2's energy is " << roland2.get_energy_points() << std::endl;
+	roland.whoAmI();
 	roland2.guardGate();
 	roland2.highFiveGuys();
 	lilith.attack(cp);

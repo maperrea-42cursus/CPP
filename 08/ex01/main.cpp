@@ -5,29 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/11 17:18:02 by maperrea          #+#    #+#             */
-/*   Updated: 2021/12/01 16:40:12 by maperrea         ###   ########.fr       */
+/*   Created: 2022/01/07 11:57:56 by maperrea          #+#    #+#             */
+/*   Updated: 2022/01/11 16:17:59 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#include "Span.hpp"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 int main()
 {
-	Animal * meta = new Animal();
-	Animal j = Dog();
-	Animal * i = new Cat();
-	WrongAnimal * k = new WrongCat();
-	std::cout << j.getType() << std::endl;
-	std::cout << i->getType() << std::endl;
-	std::cout << k->getType() << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j.makeSound();
-	k->makeSound();
-	meta->makeSound();
+	Span sp1 = Span(10000);
+	Span sp2 = Span(10000);
+	std::list<int> lst;
+	srand(time(NULL));
+	
+	for (int i = 0; i < 10000; i++) {
+		int nbr = rand();
+		lst.push_back(nbr);
+		sp1.addNumber(nbr);
+	}
+
+	sp2.addRange(lst.begin(), lst.end());
+
+	std::cout << sp1.shortestSpan() << std::endl;
+	std::cout << sp2.shortestSpan() << std::endl;
+	std::cout << sp1.longestSpan() << std::endl;
+	std::cout << sp2.longestSpan() << std::endl;
 }

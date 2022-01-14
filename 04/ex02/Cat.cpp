@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 16:24:44 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/18 12:40:15 by maperrea         ###   ########.fr       */
+/*   Updated: 2021/12/01 17:34:13 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ Cat::Cat() : Animal("Cat") {
 }
 
 Cat::Cat(const Cat & copy) {
+	this->brain = NULL;
 	*this = copy;
-	std::cout << "It is a cat!" << std::endl;
+	std::cout << "It is a cat copy!" << std::endl;
 }
 
 Cat::~Cat() {
