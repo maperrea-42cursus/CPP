@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 15:46:42 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/26 17:14:51 by maperrea         ###   ########.fr       */
+/*   Updated: 2022/01/25 14:33:00 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include <stdlib.h>
 
 void	from_char(std::string & str) {
-	std::cout << "CHAR" <<std::endl;
 	char c = str.at(0);
 	std::cout << "char: '" << c << "'" << std::endl;
 
@@ -27,7 +26,6 @@ void	from_char(std::string & str) {
 }
 
 void	from_int(std::string & str) {
-	std::cout << "INT" <<std::endl;
 	int i = std::atoi(str.c_str());
 
 	std::cout << "char: ";
@@ -44,7 +42,6 @@ void	from_int(std::string & str) {
 }
 
 void	from_float(std::string & str) {
-	std::cout << "FLOAT" <<std::endl;
 	float f = static_cast<float>(std::atof(str.c_str()));
 
 	std::cout << "char: ";
@@ -66,7 +63,6 @@ void	from_float(std::string & str) {
 }
 
 void	from_double(std::string & str) {
-	std::cout << "DOUBLE" <<std::endl;
 	double d = std::atof(str.c_str());
 
 	std::cout << "char: ";
