@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 18:20:16 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/30 18:48:11 by maperrea         ###   ########.fr       */
+/*   Updated: 2022/01/28 11:07:37 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class Array {
 			}
 		};
 
-		Array<T>() { _array = NULL; }
-		Array<T>(unsigned int n) { _size = n; _array = new T[_size]; }
-		Array<T>(Array<T> const & copy) { _array = NULL; *this = copy; }
-		~Array<T>() { delete [] _array; };
+		Array() { _array = NULL; }
+		Array(unsigned int n) { _size = n; _array = new T[_size](); }
+		Array(Array<T> const & copy) { _array = NULL; *this = copy; }
+		~Array() { delete [] _array; };
 
 		unsigned int size() const {
 			return _size;

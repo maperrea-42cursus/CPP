@@ -6,7 +6,7 @@
 /*   By: maperrea <maperrea@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 17:58:51 by maperrea          #+#    #+#             */
-/*   Updated: 2021/11/30 18:18:28 by maperrea         ###   ########.fr       */
+/*   Updated: 2022/01/28 11:00:12 by maperrea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int main() {
 	int a[5] = {0, 1, 2, 3, 4};
 	std::string s[3] = {"abc", "def", "ghi"};
 
-	iter<int>(a, 5, &(print<int>));
-	iter<std::string>(s, 3, &(print<std::string>));
+	iter(a, 5, &print);
+	iter(s, 3, &print);
 }
